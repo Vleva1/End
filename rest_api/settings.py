@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'rets_api.urls'
+ROOT_URLCONF = 'rest_api.urls'
 
 TEMPLATES = [
     {
@@ -85,10 +85,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'pereval',
-        'USER': os.environ.get('FSTR_DB_LOGIN'),
-        'PASSWORD': os.environ.get('FSTR_DB_PASS'),
-        'HOST': os.environ.get('FSTR_DB_HOST'),
-        'PORT': os.environ.get('FSTR_DB_PORT'),
+        # 'USER': os.environ.get('FSTR_DB_LOGIN'),
+        # 'PASSWORD': os.environ.get('FSTR_DB_PASS'),
+        # 'HOST': os.environ.get('FSTR_DB_HOST'),
+        # 'PORT': os.environ.get('FSTR_DB_PORT'),
+        'USER': "postgres",
+        'PASSWORD': "1111",
+        'HOST': "localhost",
+        'PORT': "",
     }
 }
 
