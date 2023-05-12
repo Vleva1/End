@@ -11,11 +11,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 
 dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
-# if os.path.exists(dotenv_path):
-#     load_dotenv(dotenv_path)
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -85,14 +85,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'pereval',
-        # 'USER': os.environ.get('FSTR_DB_LOGIN'),
-        # 'PASSWORD': os.environ.get('FSTR_DB_PASS'),
-        # 'HOST': os.environ.get('FSTR_DB_HOST'),
-        # 'PORT': os.environ.get('FSTR_DB_PORT'),
-        'USER': "postgres",
-        'PASSWORD': "1111",
-        'HOST': "localhost",
-        'PORT': "",
+        'USER': os.environ.get('FSTR_DB_LOGIN'),
+        'PASSWORD': os.environ.get('FSTR_DB_PASS'),
+        'HOST': os.environ.get('FSTR_DB_HOST'),
+        'PORT': os.environ.get('FSTR_DB_PORT'),
+
     }
 }
 
